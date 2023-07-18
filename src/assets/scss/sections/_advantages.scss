@@ -1,0 +1,202 @@
+.advantage-item {
+  .advantage-title {
+    position: relative;
+  }
+  .advantage-title::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 56px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include mq(tablet) {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &:nth-child(1) {
+    .advantage-title::before {
+      background-image: url(../images/advantages/advantage-1.png);
+      @include mq(retina) {
+        background-image: url(../images/advantages/advantage-1@2x.png);
+      }
+      @supports (background-image: url('../images/advantages/advantage-1.webp')) {
+        background-image: url('../images/advantages/advantage-1.webp');
+        @include mq(retina) {
+          background-image: url(../images/advantages/advantage-1@2x.webp);
+        }
+      }
+    }
+  }
+  &:nth-child(2) {
+    .advantage-title::before {
+      background-image: url(../images/advantages/advantage-2.png);
+      @include mq(retina) {
+        background-image: url(../images/advantages/advantage-2@2x.png);
+      }
+      @supports (background-image: url('../images/advantages/advantage-2.webp')) {
+        background-image: url('../images/advantages/advantage-2.webp');
+        @include mq(retina) {
+          background-image: url(../images/advantages/advantage-2@2x.webp);
+        }
+      }
+    }
+  }
+  &:nth-child(3) {
+    .advantage-title::before {
+      background-image: url(../images/advantages/advantage-3.png);
+      @include mq(retina) {
+        background-image: url(../images/advantages/advantage-3@2x.png);
+      }
+      @supports (background-image: url('../images/advantages/advantage-3.webp')) {
+        background-image: url('../images/advantages/advantage-3.webp');
+        @include mq(retina) {
+          background-image: url(../images/advantages/advantage-3@2x.webp);
+        }
+      }
+    }
+  }
+  &:nth-child(4) {
+    .advantage-title::before {
+      background-image: url(../images/advantages/advantage-4.png);
+      @include mq(retina) {
+        background-image: url(../images/advantages/advantage-4@2x.png);
+      }
+      @supports (background-image: url('../images/advantages/advantage-4.webp')) {
+        background-image: url('../images/advantages/advantage-4.webp');
+        @include mq(retina) {
+          background-image: url(../images/advantages/advantage-4@2x.webp);
+        }
+      }
+    }
+  }
+  &:nth-child(5) {
+    .advantage-title::before {
+      background-image: url(../images/advantages/advantage-5.png);
+      @include mq(retina) {
+        background-image: url(../images/advantages/advantage-5@2x.png);
+      }
+      @supports (background-image: url('../images/advantages/advantage-5.webp')) {
+        background-image: url('../images/advantages/advantage-5.webp');
+        @include mq(retina) {
+          background-image: url(../images/advantages/advantage-5@2x.webp);
+        }
+      }
+    }
+  }
+  &:nth-child(6) {
+    .advantage-title::before {
+      background-image: url(../images/advantages/advantage-6.png);
+      @include mq(retina) {
+        background-image: url(../images/advantages/advantage-6@2x.png);
+      }
+      @supports (background-image: url('../images/advantages/advantage-6.webp')) {
+        background-image: url('../images/advantages/advantage-6.webp');
+        @include mq(retina) {
+          background-image: url(../images/advantages/advantage-6@2x.webp);
+        }
+      }
+    }
+  }
+  &:nth-child(7) {
+    .advantage-title::before {
+      background-image: url(../images/advantages/advantage-7.png);
+      @include mq(retina) {
+        background-image: url(../images/advantages/advantage-7@2x.png);
+      }
+      @supports (background-image: url('../images/advantages/advantage-7.webp')) {
+        background-image: url('../images/advantages/advantage-7.webp');
+        @include mq(retina) {
+          background-image: url(../images/advantages/advantage-7@2x.webp);
+        }
+      }
+    }
+  }
+  &:nth-child(8) {
+    .advantage-title::before {
+      background-image: url(../images/advantages/advantage-8.png);
+      @include mq(retina) {
+        background-image: url(../images/advantages/advantage-8@2x.png);
+      }
+      @supports (background-image: url('../images/advantages/advantage-8.webp')) {
+        background-image: url('../images/advantages/advantage-8.webp');
+        @include mq(retina) {
+          background-image: url(../images/advantages/advantage-8@2x.webp);
+        }
+      }
+    }
+  }
+  &:nth-child(9) {
+    .advantage-title::before {
+      background-image: url(../images/advantages/advantage-9.png);
+      @include mq(retina) {
+        background-image: url(../images/advantages/advantage-9@2x.png);
+      }
+      @supports (background-image: url('../images/advantages/advantage-9.webp')) {
+        background-image: url('../images/advantages/advantage-9.webp');
+        @include mq(retina) {
+          background-image: url(../images/advantages/advantage-9@2x.webp);
+        }
+      }
+    }
+  }
+}
+
+.advantage-label {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 68px;
+    height: 68px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/advantages/label-face.png);
+    @include mq(retina) {
+      background-image: url(../images/advantages/label-face@2x.png);
+    }
+    @supports (background-image: url('../images/advantages/label-face.webp')) {
+      background-image: url('../images/advantages/label-face.webp');
+      @include mq(retina) {
+        background-image: url(../images/advantages/label-face@2x.webp);
+      }
+    }
+
+    @include mq(tablet) {
+      top: 50%;
+      left: -76px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -16px;
+    // transform: translateX(-50%);
+    width: 13px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/advantages/arrow.svg);
+
+    @include mq(tablet) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

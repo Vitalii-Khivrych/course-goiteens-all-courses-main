@@ -1,0 +1,260 @@
+.section-result {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 280px 262px;
+  background-image: url(../images/result/result-bg-mob.png);
+
+  @include mq(retina) {
+    background-image: url(../images/result/result-bg-mob@2x.png);
+  }
+
+  @supports (background-image: url(../images/result/result-bg-mob.webp)) {
+    background-image: url(../images/result/result-bg-mob.webp);
+    @include mq(retina) {
+      background-image: url(../images/result/result-bg-mob@2x.webp);
+    }
+  }
+
+  @include mq(tablet) {
+    background-position: right bottom;
+    background-size: 336px 315px;
+    background-image: url(../images/result/result-bg-tab.png);
+
+    @include mq(retina) {
+      background-image: url(../images/result/result-bg-tab@2x.png);
+    }
+
+    @supports (background-image: url(../images/result/result-bg-tab.webp)) {
+      background-image: url(../images/result/result-bg-tab.webp);
+      @include mq(retina) {
+        background-image: url(../images/result/result-bg-tab@2x.webp);
+      }
+    }
+  }
+
+  @include mq(desktop) {
+    background-position: center bottom;
+    background-size: 384px 360px;
+    background-image: url(../images/result/result-bg-desk.png);
+
+    @include mq(retina) {
+      background-image: url(../images/result/result-bg-desk@2x.png);
+    }
+
+    @supports (background-image: url(../images/result/result-bg-desk.webp)) {
+      background-image: url(../images/result/result-bg-desk.webp);
+      @include mq(retina) {
+        background-image: url(../images/result/result-bg-desk@2x.webp);
+      }
+    }
+  }
+}
+
+.result-item {
+  &:not(:last-child) {
+    @include mq(mobile-only) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &:last-child {
+    @include mq(desktop) {
+      grid-column: 3;
+    }
+  }
+}
+
+.result-item-title::before {
+  content: '';
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: #efefff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60px;
+  box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  @include mq(tablet) {
+    width: 84px;
+    height: 84px;
+    background-size: 70px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+  }
+}
+
+.result-item:nth-child(1) .result-item-title::before {
+  background-image: url(../images/result/computer-mob.png);
+
+  @include mq(retina) {
+    background-image: url(../images/result/computer-mob@2x.png);
+  }
+
+  @supports (background-image: url(../images/result/computer-mob.webp)) {
+    background-image: url(../images/result/computer-mob.webp);
+    @include mq(retina) {
+      background-image: url(../images/result/computer-mob@2x.webp);
+    }
+  }
+
+  @include mq(desktop) {
+    background-image: url(../images/result/computer-desk.png);
+
+    @include mq(retina) {
+      background-image: url(../images/result/computer-desk@2x.png);
+    }
+
+    @supports (background-image: url(../images/result/computer-desk.webp)) {
+      background-image: url(../images/result/computer-desk.webp);
+      @include mq(retina) {
+        background-image: url(../images/result/computer-desk@2x.webp);
+      }
+    }
+  }
+}
+
+.result-item:nth-child(2) .result-item-title::before {
+  background-image: url(../images/result/user-mob.png);
+
+  @include mq(retina) {
+    background-image: url(../images/result/user-mob@2x.png);
+  }
+
+  @supports (background-image: url(../images/result/user-mob.webp)) {
+    background-image: url(../images/result/user-mob.webp);
+    @include mq(retina) {
+      background-image: url(../images/result/user-mob@2x.webp);
+    }
+  }
+
+  @include mq(desktop) {
+    background-image: url(../images/result/user-desk.png);
+
+    @include mq(retina) {
+      background-image: url(../images/result/user-desk@2x.png);
+    }
+
+    @supports (background-image: url(../images/result/user-desk.webp)) {
+      background-image: url(../images/result/user-desk.webp);
+      @include mq(retina) {
+        background-image: url(../images/result/user-desk@2x.webp);
+      }
+    }
+  }
+}
+
+.result-item:nth-child(3) .result-item-title::before {
+  background-image: url(../images/result/like-mob.png);
+
+  @include mq(retina) {
+    background-image: url(../images/result/like-mob@2x.png);
+  }
+
+  @supports (background-image: url(../images/result/like-mob.webp)) {
+    background-image: url(../images/result/like-mob.webp);
+    @include mq(retina) {
+      background-image: url(../images/result/like-mob@2x.webp);
+    }
+  }
+
+  @include mq(desktop) {
+    background-image: url(../images/result/like-desk.png);
+
+    @include mq(retina) {
+      background-image: url(../images/result/like-desk@2x.png);
+    }
+
+    @supports (background-image: url(../images/result/like-desk.webp)) {
+      background-image: url(../images/result/like-desk.webp);
+      @include mq(retina) {
+        background-image: url(../images/result/like-desk@2x.webp);
+      }
+    }
+  }
+}
+
+.result-item:nth-child(4) .result-item-title::before {
+  background-image: url(../images/result/case-mob.png);
+
+  @include mq(retina) {
+    background-image: url(../images/result/case-mob@2x.png);
+  }
+
+  @supports (background-image: url(../images/result/case-mob.webp)) {
+    background-image: url(../images/result/case-mob.webp);
+    @include mq(retina) {
+      background-image: url(../images/result/case-mob@2x.webp);
+    }
+  }
+
+  @include mq(desktop) {
+    background-image: url(../images/result/case-desk.png);
+
+    @include mq(retina) {
+      background-image: url(../images/result/case-desk@2x.png);
+    }
+
+    @supports (background-image: url(../images/result/case-desk.webp)) {
+      background-image: url(../images/result/case-desk.webp);
+      @include mq(retina) {
+        background-image: url(../images/result/case-desk@2x.webp);
+      }
+    }
+  }
+}
+
+.result-item:nth-child(5) .result-item-title::before {
+  background-image: url(../images/result/target-mob.png);
+
+  @include mq(retina) {
+    background-image: url(../images/result/target-mob@2x.png);
+  }
+
+  @supports (background-image: url(../images/result/target-mob.webp)) {
+    background-image: url(../images/result/target-mob.webp);
+    @include mq(retina) {
+      background-image: url(../images/result/target-mob@2x.webp);
+    }
+  }
+
+  @include mq(desktop) {
+    background-image: url(../images/result/target-desk.png);
+
+    @include mq(retina) {
+      background-image: url(../images/result/target-desk@2x.png);
+    }
+
+    @supports (background-image: url(../images/result/target-desk.webp)) {
+      background-image: url(../images/result/target-desk.webp);
+      @include mq(retina) {
+        background-image: url(../images/result/target-desk@2x.webp);
+      }
+    }
+  }
+}
+
+.last {
+  position: relative;
+}
+
+.last::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-image: url(../images/result/star.svg);
+
+  @include mq(mobile) {
+    right: -25px;
+  }
+}

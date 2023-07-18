@@ -1,0 +1,30 @@
+{% set formId = form.id %} {% import './macro/step.html' as service %}
+
+<div class="backdrop is-hidden smOnly:px-5" data-modal>
+  <div class="modal text-black-light bg-white md:min-w-[494px]">
+    <a class="mb-[95px]" href="{{page.canonical}}" aria-label="{{logo.link_logo_aria}}">
+      <svg class="md:h-[36px] md:w-[142px]" width="118" height="30" aria-label="{{logo.logo_aria}}">
+        <title>{{logo.logo_aria}}</title>
+        <use href="./assets/images/sprite.svg#logo-black"></use>
+      </svg>
+    </a>
+    <button
+      class="modal-close-btn"
+      type="button"
+      data-modal-close
+      aria-label="{{form.btnCloseAria}}"
+    >
+      <svg
+        class="modal-btn-close-svg md:h-8 md:w-8"
+        width="24"
+        height="24"
+        aria-label="{{form.btnCloseAria}}"
+      >
+        <use href="./assets/images/sprite.svg#icon-close-modal"></use>
+      </svg>
+    </button>
+    {{service.stepDiv(form.steps, formId)}}
+    <h2 class="mb-8 text-[20px] font-bold leading-[1.2] md:text-[24px]">{{ form.title }}</h2>
+    {% include './formFields.njk' %}
+  </div>
+</div>

@@ -1,0 +1,99 @@
+{% set section = reviews %} {% import '../components/button.html' as button %}
+
+<section class="section">
+  <div class="reviews container">
+    <h2
+      class="mb-6 w-[64%] text-2xl font-bold md:mb-10 md:w-[336px] md:text-4xl md:leading-[54px] xl:mb-[60px] xl:w-[700px] xl:pt-12 xl:text-[56px] xl:leading-[68px]"
+    >
+      {{section.title}}
+    </h2>
+    <ul
+      class="mb-6 flex flex-col gap-6 md:mb-10 md:gap-10 xl:flex-row xl:flex-wrap xl:gap-x-8 xl:gap-y-10"
+      data-reviews-list
+    >
+      {% for review in section.reviewList %}
+      <li
+        class="{% if loop.index > 4%}hidden{% endif %} {% if review.type === 'video'%}aspect-[70/53]{% endif %} relative rounded-md bg-accent pb-[10%] shadow-main md:mx-auto md:h-[448px] md:w-[592px] md:pb-14"
+      >
+        <div class="relative pt-[10%] md:pt-[60px]">
+          <span
+            class="pin absolute left-[11%] top-[50%] block aspect-square w-[6px] translate-y-[-50%] rounded-full bg-button md:left-[64px] md:h-[12px] md:w-[12px]"
+          ></span>
+          <p
+            class="absolute right-[50%] top-[50%] translate-x-[50%] translate-y-[-50%] text-[10px] text-white md:text-lg"
+          >
+            {{review.author}}
+          </p>
+        </div>
+        {% if review.type === 'video' %}
+        <div class="relative md:h-[332px] smOnly:aspect-[280/157]" data-type="{{review.type}}">
+          <button
+            type="button"
+            aria-label="{{section.buttonAria}}"
+            data-link="{{review.link}}"
+            class="absolute right-2/4 top-2/4 z-10 h-[34px] w-[34px] translate-x-[50%] translate-y-[-50%] md:h-[72px] md:w-[72px]"
+          >
+            <svg aria-label="{{section.iconAria}}" width="100%" height="100%">
+              <use href="./assets/images/sprite.svg#play"></use>
+            </svg>
+          </button>
+          <picture>
+            <source
+              srcset="
+                {{review.placeholders.tablet.normal.webp}} 1x,
+                {{review.placeholders.tablet.retina.webp}} 2x
+              "
+              media="(min-width: 768px)"
+              type="image/webp"
+            />
+            <source
+              srcset="
+                {{review.placeholders.tablet.normal.png}} 1x,
+                {{review.placeholders.tablet.retina.png}} 2x
+              "
+              media="(min-width: 768px)"
+              type="image/png"
+            />
+            <source
+              srcset="
+                {{review.placeholders.mobile.normal.webp}} 1x,
+                {{review.placeholders.mobile.retina.webp}} 2x
+              "
+              media="(max-width: 767px)"
+              type="image/webp"
+            />
+            <source
+              srcset="
+                {{review.placeholders.mobile.normal.png}} 1x,
+                {{review.placeholders.mobile.retina.png}} 2x
+              "
+              media="(max-width: 767px)"
+              type="image/png"
+            />
+
+            <img
+              width="100%"
+              height="100%"
+              loading="lazy"
+              src="{{review.placeholders.mobile.normal.png}}"
+              alt="{{section.thumbnailAlt}}{{review.author}}"
+            />
+          </picture>
+        </div>
+        {% else %}
+        <div
+          class="flex h-[90%] w-full items-center bg-white p-[34px] md:h-[332px] md:px-[72px] md:py-[32px]"
+        >
+          <div class="w-full md:max-h-[262px] md:overflow-auto">
+            <p class="text-[10px] md:text-lg">{{review.text}}</p>
+          </div>
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="load-more-wrapper flex justify-center">
+      {{ button.button(section.buttonText, "data-load-more aria-label='Load more reviews' ") }}
+    </div>
+  </div>
+</section>

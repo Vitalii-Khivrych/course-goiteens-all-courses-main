@@ -1,0 +1,197 @@
+.about::after {
+  content: '';
+  position: relative;
+  bottom: -40px;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 20px;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+
+  @include mq(tablet) {
+    height: 60px;
+    bottom: -60px;
+  }
+
+  @include mq(tablet) {
+    height: 80px;
+    bottom: -80px;
+  }
+}
+
+.about .pin::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 220%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #5dcdb0;
+
+  @include mq(tablet) {
+    left: 22px;
+  }
+}
+
+.about .pin::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 220%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #e57b89;
+
+  @include mq(tablet) {
+    right: 22px;
+  }
+}
+
+.about .award:nth-child(1) {
+  & .award-icon {
+    width: 36px;
+  }
+
+  & .award-title {
+    width: 203px;
+
+    @include mq(tablet) {
+      width: 280px;
+    }
+
+    @include mq(desktop) {
+      width: 292px;
+    }
+  }
+
+  & .award-description {
+    width: 232px;
+
+    @include mq(desktop) {
+      width: 292px;
+    }
+  }
+
+  & span {
+    display: block;
+
+    @include mq(desktop) {
+      display: none;
+    }
+  }
+}
+
+.about .award:nth-child(2) {
+  & .award-icon {
+    width: 40px;
+  }
+
+  & .award-title {
+    width: 150px;
+
+    @include mq(desktop) {
+      width: 220px;
+    }
+  }
+
+  & .award-description {
+    width: 176px;
+
+    @include mq(tablet) {
+      width: 230px;
+    }
+
+    @include mq(desktop) {
+      width: 280px;
+    }
+  }
+
+  & span {
+    @include mq(tablet-only) {
+      display: block;
+    }
+  }
+}
+
+.about .award:nth-child(3) {
+  & .award-icon {
+    width: 52px;
+  }
+
+  & .award-title {
+    width: 150px;
+
+    @include mq(desktop) {
+      width: 220px;
+    }
+  }
+
+  & .award-description {
+    width: 216px;
+
+    @include mq(tablet) {
+      width: 268px;
+    }
+  }
+}
+
+.about .video-reference::before {
+  content: '';
+  position: absolute;
+  background-color: #fec830;
+  border-radius: 12px;
+  left: 68px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 2px;
+  height: 48px;
+
+  @include mq(tablet) {
+    width: 3px;
+    height: 62px;
+    left: 90px;
+  }
+}
+
+.about .video-reference::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 68px;
+  height: 68px;
+  background-size: cover;
+  background-image: url('../images/about/thinking-memoji-mobile.png');
+
+  @include mq(retina) {
+    background-image: url('../images/about/thinking-memoji-mobile@2x.png');
+  }
+
+  @supports (background-image: url(../images/about/thinking-memoji-mobile.webp)) {
+    background-image: url(../images/about/thinking-memoji-mobile.webp);
+    @include mq(retina) {
+      background-image: url(../images/about/thinking-memoji-mobile@2x.webp);
+    }
+  }
+
+  @include mq(tablet) {
+    background-image: url('../images/about/thinking-memoji-tablet.png');
+    width: 78px;
+    height: 78px;
+
+    @include mq(retina) {
+      background-image: url('../images/about/thinking-memoji-tablet@2x.png');
+    }
+
+    @supports (background-image: url(../images/about/thinking-memoji-tablet.webp)) {
+      background-image: url(../images/about/thinking-memoji-tablet.webp);
+      @include mq(retina) {
+        background-image: url(../images/about/thinking-memoji-tablet@2x.webp);
+      }
+    }
+  }
+}

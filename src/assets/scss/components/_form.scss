@@ -1,0 +1,124 @@
+/*! purgecss start ignore */
+// Leeloo div styles
+.leeloo {
+  @apply mx-auto mt-12 overflow-hidden;
+
+  & iframe {
+    @apply mx-auto block;
+  }
+
+  & > div {
+    width: 100%;
+  }
+
+  & > div .leeloo-lgt-form-wrapper .leeloo-lgt-form {
+    width: 100% !important;
+  }
+
+  & .leeloo-lgt-form-wrapper {
+    @apply block;
+  }
+
+  & .leeloo-lgt-form {
+    width: 100% !important;
+  }
+}
+/*! purgecss end ignore */
+
+// Progress bar styles
+.progress-bar {
+  @apply relative mt-6 h-[10px] w-full rounded-2xl;
+
+  & .color {
+    @apply absolute h-[10px] w-0 rounded-2xl bg-accent;
+    animation: progress 4s infinite linear;
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 50%;
+  }
+  50% {
+    width: 75%;
+  }
+  75% {
+    width: 85%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.scroll-hidden {
+  @apply overflow-hidden;
+}
+
+.steps-bar {
+  @apply relative mb-[60px] flex justify-between border-2 border-accent py-0;
+
+  & > .item.active {
+    @apply top-[-21px] h-[42px] w-[42px] border-[6px] border-accent text-[#010101];
+    &:first-child::after {
+      content: 'Перший крок';
+      font-size: 20px;
+      line-height: 19px;
+      color: #5b5bef;
+      font-weight: 700;
+      position: absolute;
+      left: -8px;
+      top: -38px;
+      height: 20px;
+      width: 143px;
+    }
+    &:last-child::after {
+      content: 'Готово';
+      font-size: 20px;
+      line-height: 19px;
+      color: #5b5bef;
+      font-weight: 700;
+      position: absolute;
+      left: -38px;
+      top: -38px;
+      bottom: 0;
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  & > .item {
+    @apply absolute -top-4 flex h-8 w-8 items-center justify-center overflow-visible whitespace-nowrap rounded-full border-4 border-accent bg-white text-center font-normal text-[#979797];
+
+    &:first-child {
+      @apply left-[-5px];
+    }
+
+    &:nth-child(2) {
+      left: calc(50% - 10px);
+    }
+
+    &:last-child {
+      @apply right-[-5px];
+    }
+  }
+}
+
+.input-wrap-checkbox {
+  order: 5;
+}
+
+.modal {
+  form {
+    button.btn {
+      border-radius: 12px;
+      margin: 0 auto;
+    }
+  }
+  .text-accent {
+    text-decoration: underline;
+    color: inherit;
+  }
+}

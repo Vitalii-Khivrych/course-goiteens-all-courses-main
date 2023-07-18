@@ -1,0 +1,135 @@
+{% set section = footer %}
+<footer class="{{section.id}} bg-[#202020] pt-8 pb-[64px] text-white font-gotham md:py-10">
+  <div class="container">
+    <div class="mb-[55px] flex justify-between">
+      <a class="" href="{{page.canonical}}" aria-label="{{logo.link_logo_aria}}">
+        <svg
+          class="md:h-[36px] md:w-[142px]"
+          width="118"
+          height="30"
+          aria-label="{{logo.logo_aria}}"
+        >
+          <title>{{logo.logo_aria}}</title>
+          <use href="./assets/images/sprite.svg#logo-white"></use>
+        </svg>
+      </a>
+
+      <!-- TABLET BLOCK WITH NUMBER AND PAYMENT -->
+      <div class="hidden md:flex md:flex-col md:items-end md:gap-[30px]">
+        <a
+          href="{{section.tel}}"
+          class="text-[20px] leading-[0.9]"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          <svg width="24" height="24" class="inline-block" aria-label="іконка телефона">
+            <use href="./assets/images/sprite.svg#tell"></use>
+          </svg>
+          {{section.telText}}</a
+        >
+        <ul class="flex gap-4">
+          {% for item in section.payList %}
+          <li>
+            <svg width="34" height="34" aria-label="{{item.alt}}">
+              <title>{{item.altLink}}</title>
+              <use href="./assets/images/sprite.svg#{{item.type}}"></use>
+            </svg>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <!-- END TABLET BLOCK WITH NUMBER AND PAYMENT -->
+
+      <!-- MOBILE LIST WITH SOCIAL -->
+      <ul class="grid grid-cols-2 gap-[30px] md:hidden">
+        {% for item in section.socialLinks %}
+        <li>
+          <a
+            href="{{item.link}}"
+            rel="noopener noreferrer nofollow"
+            aria-label="{{item.alt}}"
+            target="_blank"
+          >
+            <svg
+              class="hover:fill-secondAccent focus:fill-secondAccent fill-white duration-300"
+              width="32"
+              height="32"
+              aria-label="{{item.alt}}"
+            >
+              <title>{{item.altLink}}</title>
+              <use href="./assets/images/sprite.svg#{{item.type}}"></use>
+            </svg>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <!-- END MOBILE LIST WITH SOCIAL -->
+    </div>
+
+    <!-- MOBILE BLOCK WITH NUMBER AND PAYMENT -->
+    <div class="text-center md:hidden">
+      <a
+        href="{{section.tel}}"
+        class="mb-7 block text-[20px] leading-[0.9]"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+      >
+        <svg width="24" height="24" class="inline-block" aria-label="{{section.telAria}}">
+          <use href="./assets/images/sprite.svg#tell"></use>
+        </svg>
+        {{section.telText}}</a
+      >
+
+      <ul class="mb-7 flex justify-center gap-4">
+        {% for item in section.payList %}
+        <li>
+          <svg width="34" height="34" aria-label="{{item.alt}}">
+            <title>{{item.altLink}}</title>
+            <use href="./assets/images/sprite.svg#{{item.type}}"></use>
+          </svg>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- END MOBILE BLOCK WITH NUMBER AND PAYMENT -->
+
+    <!-- TABLET BLOCK WITH SOCIAL AND AGREEMENT LINKS -->
+    <div class="md:flex md:items-end md:justify-between">
+      <ul class="hidden md:flex md:gap-4">
+        {% for item in section.socialLinks %}
+        <li>
+          <a
+            href="{{item.link}}"
+            rel="noopener noreferrer nofollow"
+            aria-label="{{item.alt}}"
+            target="_blank"
+          >
+            <svg
+              class="hover:fill-secondAccent focus:fill-secondAccent fill-white duration-300"
+              width="32"
+              height="32"
+              aria-label="{{item.alt}}"
+            >
+              <title>{{item.altLink}}</title>
+              <use href="./assets/images/sprite.svg#{{item.type}}"></use>
+            </svg>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <div class="md:flex md:gap-[14px] md:text-end xl:flex xl:gap-4 smOnly:text-center">
+        {% for item in section.agreementList %}
+        <a
+          href="{{item.link}}"
+          class="block text-[16px] text-[#ABABAB] underline duration-300 hover:text-accent"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+          >{{item.text}}</a
+        >
+        {% endfor %}
+      </div>
+    </div>
+    <!-- END TABLET BLOCK WITH SOCIAL AND AGREEMENT LINKS -->
+  </div>
+</footer>

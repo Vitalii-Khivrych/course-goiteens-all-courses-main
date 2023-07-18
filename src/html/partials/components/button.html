@@ -1,0 +1,21 @@
+{% macro button(text, data, type='button', variation) %} {% if variation == "yellow" %}
+<button
+  class="btn h-[56px] w-[250px] rounded-[30px] bg-button text-[18px] font-bold leading-[28px] text-primary hover:bg-transparent hover:text-button hover:shadow-btn smOnly:h-[40px] smOnly:w-[166px] smOnly:text-[14px] smOnly:leading-[20px]"
+  {{
+  data
+  }}
+  type="{{ type }}"
+>
+  {{ text }}
+</button>
+{% else %}
+<button
+  class="btn h-[56px] w-[250px] rounded-[30px] border-2 border-accent bg-transparent text-[18px] font-bold leading-[28px] text-accent hover:bg-accent hover:text-white hover:shadow-btn_blue disabled:border-disabled disabled:text-disabled disabled:hover:bg-transparent disabled:hover:shadow-transparent smOnly:h-[40px] smOnly:w-[108px] smOnly:text-[14px] smOnly:leading-[20px]"
+  {{
+  data
+  }}
+  type="{{ type }}"
+>
+  {{ text }}
+</button>
+{% endif %} {% endmacro %}

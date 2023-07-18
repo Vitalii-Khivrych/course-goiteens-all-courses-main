@@ -1,0 +1,20 @@
+{% set section = steps %}
+
+<section class="{{section.id}} section md:pb-[74px] section-steps relative overflow-x-hidden">
+  <div class="container">
+    <h2 class="section-title mb-12 md:mb-16 xl:mb-[139px]">{{section.title}}</h2>
+    <ul class="md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-[72px] xl:grid-cols-3 xl:gap-y-[121px]">
+      {% for item in section.list %}
+      <li class="step-item">
+        <h3
+          data-item="0{{loop.index}}"
+          class="step-title relative mb-4 inline-block h-10 w-[124px] items-center pb-[10px] pt-[10px] text-2xl font-black leading-[1] text-accent"
+        >
+          Крок {{loop.index}}
+        </h3>
+        <p class="text-base leading-[1.5] md:text-lg md:leading-[1.56]">{{item.text}}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+{% set section = freeLesson %} {% import '../components/button.html' as button %}
+
+<section class="{{section.id}}  ">
+  <div class="container mdOnly:px-20">
+    <div
+      class="rounded-t-[30px] bg-white px-4 pb-6 pt-[43px] shadow-freeLesson md:px-[60px] md:pb-10 md:pt-[60px] xl:px-[104px] xl:pt-20"
+    >
+      <h2 class="section-title mb-6">{{section.title}}</h2>
+      <div class="xl:grid xl:grid-cols-2 xl:gap-x-8 xl:gap-y-6">
+        {% for list in section.list %}
+        <ul class="text-base md:text-lg notXl:first-of-type:mb-6">
+          {% for text in list %}
+
+          <li class="mb-6 last:mb-0">{{text}}</li>
+          {% endfor %}
+        </ul>
+        {% endfor %}
+      </div>
+    </div>
+    <div
+      class="lesson-discount__blue-wrapper xl rounded-b-[30px] bg-accent px-4 pb-10 pt-6 shadow-freeLesson md:px-[60px] md:pb-[60px] md:pt-10 xl:grid xl:grid-cols-2 xl:gap-x-8 xl:px-[104px] xl:pb-10"
+    >
+      <h3
+        class="text-xl font-bold leading-normal text-white md:text-2xl xl:text-4xl xl:leading-normal smOnly:mb-6 notXl:mb-4"
+      >
+        {{section.discounts.title}}
+      </h3>
+      <div>
+        <ul class="mb-6 text-sm text-white md:mb-10 md:w-[360px] md:text-lg">
+          {% for discount in section.discounts.list %} {% if discount.amount.length > 0 %}
+
+          <li class="mb-3 last:mb-0">
+            {{discount.text}}
+            <span class="text-crossed">{{discount.amount}}</span> {{discount.endText}}
+          </li>
+
+          {% else %}
+
+          <li>{{discount.text}}</li>
+
+          {% endif %} {% endfor %}
+        </ul>
+        <div class="relative left-[-5px] sm:left-0">
+          {{ button.button(section.button, 'data-modal-open', variation="yellow" ) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

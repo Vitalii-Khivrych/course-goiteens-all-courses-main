@@ -1,0 +1,57 @@
+{% set section = what_choose %} {% import '../components/button.html' as button %} {% import
+'../components/macro/input.html' as fields %}
+
+<section
+  class="section {{section.id}} xl:flex xl:px-8 xl:max-w-[1280px] xl:mx-auto items-center"
+  id="{{section.id}}"
+>
+  <div
+    class="mx-auto rounded-[30px] bg-violet px-5 pb-[80px] pt-10 md:w-[652px] md:px-[104px] md:pt-[62px] xl:self-center xl:rounded-r-none xl:pb-[62px] smOnly:mb-[-40px] smOnly:max-w-[480px] mdOnly:mb-[-120px] mdOnly:pb-[156px]"
+  >
+    <h2 class="mb-4 text-[24px] font-bold leading-[32px] md:text-[36px] md:leading-[54px]">
+      {{section.title}}
+    </h2>
+    <p class="text-[16px] leading-[24px] md:text-[18px] md:leading-[28px]">{{section.subtitle}}</p>
+  </div>
+  <div
+    class="mx-auto rounded-[12px] bg-white px-5 py-10 shadow-formChoose md:w-[564px] md:px-[112px] smOnly:max-w-[480px]"
+  >
+    <div class="flex items-center">
+      <picture>
+        <source
+          srcset="
+            ./assets/images/whatChoose/{{section.avatar.webp}}   1x,
+            ./assets/images/whatChoose/{{section.avatar.webp2x}} 2x
+          "
+          type="image/webp"
+        />
+        <source
+          srcset="
+            ./assets/images/whatChoose/{{section.avatar.png}}   1x,
+            ./assets/images/whatChoose/{{section.avatar.png2x}} 2x
+          "
+          type="image/png"
+        />
+        <img
+          src="./assets/images/whatChoose/{{section.avatar.png}}"
+          width="{{section.avatar.width}}"
+          height="{{section.avatar.height}}"
+          alt="{{section.avatar.alt}}"
+          loading="lazy"
+          class="md:w-[80px]"
+        />
+      </picture>
+      <p
+        class="form-title relative ml-2 max-w-[178px] font-caveat text-[16px] leading-[120%] tracking-wide md:ml-[14px] md:max-w-[235px] md:text-[24px]"
+      >
+        {{section.form.title}}
+      </p>
+    </div>
+    <form class="mt-6 text-lg md:mt-8" id="form-{{section.id}}" novalidate autocomplete="on">
+      <div class="form-wrapper flex flex-wrap gap-2">
+        {%for field in section.form.inputs %} {{ fields.inputField(field, formId) }} {% endfor %}
+      </div>
+      {{ button.button(form.btnSubmit, variation='yellow', type='submit') }}
+    </form>
+  </div>
+</section>

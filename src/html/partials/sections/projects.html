@@ -1,0 +1,70 @@
+{% set section = projects %}
+
+<section
+  class="{{section.id}} section rounded-b-[30px] bg-white md:pt-0 md:rounded-b-[60px] xl:rounded-b-[90px]"
+>
+  <div class="container">
+    <h2 class="section-title mb-6 md:mb-10 md:text-2xl xl:mb-[60px] xl:text-4xl xl:leading-[1.5]">
+      {{section.title}}
+    </h2>
+    <ul class="md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 xl:grid-cols-3 xl:gap-y-[60px]">
+      {% for item in section.list %}
+      <li class="item">
+        <div
+          class="relative mb-4 rounded-md md:mb-6 md:h-[243px] md:w-[336px] xl:h-[278px] xl:w-[384px]"
+        >
+          <picture>
+            <source
+              srcset="{{item.image.1x.desk}}.webp 1x, {{item.image.2x.desk}}.webp 2x"
+              type="image/webp"
+              media="(min-width: 1280px)"
+            />
+            <source
+              srcset="{{item.image.1x.tab}}.webp 1x, {{item.image.2x.tab}}.webp 2x"
+              type="image/webp"
+              media="(min-width: 768px)"
+            />
+            <source
+              srcset="{{item.image.1x.mob}}.webp 1x, {{item.image.2x.mob}}.webp 2x"
+              type="image/webp"
+              media="(max-width: 767.98px)"
+            />
+            <source
+              srcset="{{item.image.1x.desk}}.jpg 1x, {{item.image.2x.desk}}.jpg 2x"
+              type="image/jpeg"
+              media="(min-width: 1280px)"
+            />
+            <source
+              srcset="{{item.image.1x.tab}}.jpg 1x, {{item.image.2x.tab}}.jpg 2x"
+              type="image/jpeg"
+              media="(min-width: 768px)"
+            />
+            <source
+              srcset="{{item.image.1x.mob}}.jpg 1x, {{item.image.2x.mob}}.jpg 2x"
+              type="image/jpeg"
+              media="(max-width: 767.98px)"
+            />
+
+            <img
+              class="h-full w-full"
+              src="{{item.image.1x.desk}}.jpg"
+              alt="Фото проекту {{item.title}}"
+              width="384"
+              height="278"
+              loading="lazy"
+            />
+          </picture>
+          <span
+            class="absolute right-0 top-0 rounded-md bg-accent px-2 py-1 text-xs font-bold leading-[1.33] text-white md:text-sm md:leading-[1.43]"
+            >{{item.age}}</span
+          >
+        </div>
+        <h3 class="mb-4 text-lg font-bold leading-[1.56] md:text-xl md:leading-[1.5]">
+          {{item.title}}
+        </h3>
+        <p class="text-base leading-[1.5] md:text-lg md:leading-[1.56]">{{item.text}}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

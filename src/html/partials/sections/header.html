@@ -1,0 +1,95 @@
+{% set section = header %} {% import '../components/button.html' as button %}
+
+<header class="{{section.id}} pb-10 md:pb-[60px] xl:pb-[80px]" id="{{section.id}}">
+  <div class="container">
+    <div class="wrapper mb-[16px] border-b-2 border-grey py-4 md:mb-[40px] md:py-8 xl:mb-[52px]">
+      <a
+        class="logo block w-[92px] md:w-[132px]"
+        href="{{page.canonical}}"
+        aria-label="{{logo.link_logo_aria}}"
+        target="_blank"
+        rel="noopener nofollow noreferrer"
+      >
+        <svg
+          width="132"
+          height="40"
+          aria-label="{{logo.logo_aria}}"
+          class="smOnly:h-[24px] smOnly:w-[92px]"
+        >
+          <title>{{logo.logo_aria}}</title>
+          <use href="./assets/images/sprite.svg#logo"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="items-center justify-between xl:mb-[140px] xl:flex">
+      <div class="text-center xl:text-left">
+        <h1
+          class="text-[32px] font-bold leading-[48px] md:mb-[24px] md:max-w-[490px] md:text-[48px] md:leading-[58px] xl:mb-[52px] xl:max-w-[571px] xl:text-[56px] xl:leading-[68px] smOnly:mb-[16px] notXl:mx-auto"
+        >
+          {{section.title}}
+        </h1>
+        <p
+          class="text-[18px] leading-[28px] md:max-w-[542px] md:text-[24px] md:leading-[32px] xl:max-w-[443px] smOnly:mb-[275px] mdOnly:mb-[325px] notXl:mx-auto"
+        >
+          {{section.description}}
+        </p>
+      </div>
+      <div
+        class="form relative rounded-xl bg-white px-[18px] py-[32px] text-center md:h-[296px] md:w-[460px] md:px-[68px] md:py-[52px] smOnly:mb-[40px] smOnly:max-w-[340px] mdOnly:mb-[40px] notXl:mx-auto"
+      >
+        <p
+          class="form-title relative mb-4 text-[24px] font-bold leading-[32px] md:mb-5 md:text-[32px] md:leading-[36px]"
+        >
+          {{section.form_title}}
+        </p>
+        <p
+          class="mb-4 text-[12px] font-bold leading-[16px] md:mb-5 md:text-[16px] md:leading-[24px]"
+        >
+          {{section.form_description}}
+        </p>
+        {{ button.button(section.btn, 'data-smooth-scroll', variation='yellow') }}
+      </div>
+    </div>
+    <div class="about-wrapper relative rounded-xl bg-white pb-4 md:pb-[60px]">
+      <h2
+        class="mx-auto mb-4 w-[246px] rounded-b-[20px] bg-violet_light py-[14px] text-center text-[12px] leading-[16px] text-primary md:mb-[50px] md:text-[16px] md:leading-[24px]"
+      >
+        {{section.about_title}}
+      </h2>
+      <ul
+        class="flex flex-wrap justify-center gap-x-[42px] gap-y-4 px-6 md:gap-x-[32px] xl:md:gap-x-[102px]"
+      >
+        {% for item in section.about_icons %}
+        <li class="h-8 md:h-[38px] xl:h-[40px] w-[{{item.width}}px]">
+          <picture>
+            <source
+              srcset="
+                ./assets/images/header/{{item.webp}}   1x,
+                ./assets/images/header/{{item.webp2x}} 2x
+              "
+              type="image/webp"
+            />
+
+            <source
+              srcset="
+                ./assets/images/header/{{item.png}}   1x,
+                ./assets/images/header/{{item.png2x}} 2x
+              "
+              type="image/png"
+            />
+
+            <img
+              src="./assets/images/header/{{item.png}}"
+              height="{{item.height}}"
+              width="{{item.width}}"
+              alt="{{item.alt}}"
+              loading="lazy"
+              class="h-full w-full"
+            />
+          </picture>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</header>

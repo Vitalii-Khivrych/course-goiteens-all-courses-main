@@ -1,0 +1,67 @@
+.courses-item {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 84px;
+    height: 90px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: var(--background-mob);
+    @include mq(retina) {
+      background-image: var(--background-retina-mob);
+    }
+    @supports (background-image: var(--background-mob-webp)) {
+      background-image: var(--background-mob-webp);
+      @include mq(retina) {
+        background-image: var(--background-retina-mob-webp);
+      }
+    }
+
+    @include mq(tablet) {
+      width: 336px;
+      height: 360px;
+      left: -368px;
+
+      background-image: var(--background-tab);
+      @include mq(retina) {
+        background-image: var(--background-retina-tab);
+      }
+      @supports (background-image: var(--background-tab-webp)) {
+        background-image: var(--background-tab-webp);
+        @include mq(retina) {
+          background-image: var(--background-retina-tab-webp);
+        }
+      }
+    }
+    @include mq(desktop) {
+      width: 280px;
+      height: 300px;
+      left: -312px;
+
+      background-image: var(--background-desk);
+      @include mq(retina) {
+        background-image: var(--background-retina-desk);
+      }
+      @supports (background-image: var(--background-desk-webp)) {
+        background-image: var(--background-desk-webp);
+        @include mq(retina) {
+          background-image: var(--background-retina-desk-webp);
+        }
+      }
+    }
+  }
+
+  &__title {
+    @apply text-lg font-bold text-accent md:text-xl md:leading-[30px] xl:text-2xl smOnly:mb-4 smOnly:pr-[102px];
+  }
+
+  &__text {
+    @apply text-base md:text-lg;
+  }
+}

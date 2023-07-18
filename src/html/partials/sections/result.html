@@ -1,0 +1,23 @@
+{% set section = result %}
+
+<section
+  class="{{section.id}} section bg-white rounded-t-[30px] md:rounded-t-[60px] xl:rounded-t-[90px] xl:pb-10"
+>
+  <div class="section-result container">
+    <h2 class="section-title mb-[18px] md:mb-[37px] xl:mb-[60px]">{{section.title}}</h2>
+    <ul
+      class="pb-[286px] md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:pb-[100px] xl:grid-cols-3 xl:gap-y-[60px] xl:pb-[150px]"
+    >
+      {% for item in section.list %}
+      <li class="result-item">
+        <h3
+          class="result-item-title relative mb-3 flex min-h-[84px] items-center pl-[88px] text-lg font-bold leading-[1.56] md:mb-6 md:min-h-[90px] md:pl-[100px] md:text-xl md:leading-[1.5]"
+        >
+          {{item.title}}
+        </h3>
+        <p class="text-base leading-[1.5] md:text-lg md:leading-[1.56]">{{item.text}}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

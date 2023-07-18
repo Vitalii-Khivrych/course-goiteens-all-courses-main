@@ -1,0 +1,28 @@
+{% set section = advantages %}
+
+<section class="{{section.id}} section">
+  <div class="container">
+    <div class="mb-10 md:flex md:items-center xl:mb-[60px]">
+      <h2 class="section-title md:shrink-0 md:basis-[208px] xl:basis-[592px] smOnly:mb-6">
+        {{section.title}}
+      </h2>
+      <p
+        class="advantage-label font-caveat text-xl font-normal leading-6 md:ml-[100px] md:basis-[360px] md:border-l-2 md:border-button md:pl-5 md:text-2xl md:leading-[34px] xl:ml-[108px] smOnly:pt-[76px] smOnly:text-center"
+      >
+        {{section.label}}
+      </p>
+    </div>
+    <ul class="md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 xl:grid-cols-3 xl:gap-y-[32px]">
+      {% for item in section.list %}
+      <li class="advantage-item smOnly:mb-6 smOnly:last:mb-0">
+        <h3
+          class="advantage-title mb-3 text-base font-bold md:mb-4 md:flex md:h-14 md:items-center md:pl-[60px] xl:text-lg smOnly:pt-[68px] smOnly:text-center"
+        >
+          {{item.title}}
+        </h3>
+        <p class="text-base md:text-lg smOnly:text-center">{{item.text}}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

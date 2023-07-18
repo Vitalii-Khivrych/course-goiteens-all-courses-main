@@ -1,0 +1,8 @@
+{% import '../components/button.html' as button %}
+
+<form class="text-lg" id="{{form.id}}" data-modal-form novalidate autocomplete="on">
+  <div class="form-wrapper flex flex-wrap gap-[26px]">
+    {% block formFields %} {% endblock %} {{ button.button(form.btnSubmit, variation='yellow',
+    type='submit') }}
+  </div>
+</form>

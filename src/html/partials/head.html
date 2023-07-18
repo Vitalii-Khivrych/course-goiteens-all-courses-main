@@ -1,0 +1,66 @@
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no" />
+<meta name="robots" content="index, follow" />
+<meta name="google" content="notranslate" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+{% include 'ogp.html' %}
+
+<title>{{ page.title }}</title>
+
+<link rel="canonical" href="{{ page.canonical }}" />
+<link rel="stylesheet" href="./assets/css/style.css" />
+{% include 'favicon.html' %}
+
+<!-- Google Tag Manager -->
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', '<?= $params['GTM'] ?>');
+</script>
+<!-- End Google Tag Manager -->
+
+<!-- PHP Vars -->
+<script>
+  window.locale = '{{ page.lang }}';
+  // default
+  window.defaultName = '<?= $params['PRODUCT_NAME'] ?? NULL?>';
+  window.defaultId = '<?= $params['PRODUCT_ID'] ?? NULL?>';
+  // scratch
+  window.scratchName = '<?= $params['scratch_NAME'] ?? NULL?>';
+  window.scratchId = '<?= $params['scratch_ID'] ?? NULL?>';
+  // minecraft
+  window.minecraftName = '<?= $params['minecraft_NAME'] ?? NULL?>';
+  window.minecraftId = '<?= $params['minecraft_ID'] ?? NULL?>';
+  // wix
+  window.wixName = '<?= $params['wix_NAME'] ?? NULL?>';
+  window.wixId = '<?= $params['wix_ID'] ?? NULL?>';
+  // roblox
+  window.robloxName = '<?= $params['roblox_NAME'] ?? NULL?>';
+  window.robloxId = '<?= $params['roblox_ID'] ?? NULL?>';
+  // design
+  window.designName = '<?= $params['design_NAME'] ?? NULL?>';
+  window.designId = '<?= $params['design_ID'] ?? NULL?>';
+  // frontend
+  window.frontendName = '<?= $params['frontend_NAME'] ?? NULL?>';
+  window.frontendId = '<?= $params['frontend_ID'] ?? NULL?>';
+  // gameDev
+  window.gameDevName = '<?= $params['gameDev_NAME'] ?? NULL?>';
+  window.gameDevId = '<?= $params['gameDev_ID'] ?? NULL?>';
+  // python
+  window.pythonName = '<?= $params['python_NAME'] ?? NULL?>';
+  window.pythonId = '<?= $params['python_ID'] ?? NULL?>';
+  //
+  window.leelooHash = '<?= $params['LEELOO_HASH'] ?? NULL ?>';
+  window.elzaToken = '<?= $params['ELZA_TOKEN'] ?? NULL ?>';
+</script>
+<!-- End PHP Vars -->

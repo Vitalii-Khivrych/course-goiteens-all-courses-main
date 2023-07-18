@@ -1,0 +1,132 @@
+{% set section = about %}
+
+<section class="section about relative">
+  <div class="container">
+    <div class="mb-10 md:mb-[60px] xl:mb-[80px] xl:flex xl:gap-[92px]">
+      <div class="mb-6 md:mb-10 xl:mb-0">
+        <h2
+          class="mb-6 text-2xl font-bold md:mb-10 md:text-4xl md:leading-[54px] xl:text-[56px] xl:leading-[68px]"
+        >
+          {{section.title}}
+        </h2>
+        <p class="mb-6 md:w-[564px] md:text-lg">{{section.taskText}}</p>
+        <p class="md:w-[564px] md:text-lg">{{section.activitiesText}}</p>
+      </div>
+      <div>
+        <div
+          class="relative mx-auto mb-6 flex h-[68px] w-[280px] items-center justify-end pr-[41px] md:mb-[30px] md:h-[78px] md:w-[416px] md:pr-[27px]"
+        >
+          <p
+            class="video-reference w-[161px] font-caveat leading-[19px] md:w-[276px] md:text-2xl md:leading-[29px]"
+          >
+            {{section.videoReferenceText}}
+          </p>
+          <svg
+            aria-label="{{section.pointerAria}}"
+            width="24px"
+            height="24px"
+            class="absolute bottom-3 right-2 h-6 w-6 md:bottom-[11px] md:right-0 md:h-9 md:w-9"
+          >
+            <use href="./assets/images/sprite.svg#pointer"></use>
+          </svg>
+        </div>
+        <div
+          class="relative aspect-[20/13] rounded-md bg-accent pb-[4%] shadow-main md:mx-auto md:h-[365px] md:w-[560px] md:pb-[25px]"
+        >
+          <div class="relative pt-[4%] md:pt-[25px]">
+            <span
+              class="pin absolute left-[9%] top-[50%] block aspect-square w-[5px] translate-y-[-50%] rounded-full bg-button md:left-[51px] md:h-[10px] md:w-[10px]"
+            ></span>
+          </div>
+          <!-- Video logic same as for reviews section -->
+          <div class="relative md:h-[315px] smOnly:aspect-[140/79]" data-type="video">
+            <button
+              type="button"
+              aria-label="{{section.buttonAria}}"
+              data-link="{{section.videoLink}}"
+              class="absolute right-2/4 top-2/4 z-10 h-[35px] w-[35px] translate-x-[50%] translate-y-[-50%] md:h-[70px] md:w-[70px]"
+            >
+              <svg aria-label="{{section.buttonIconAria}}" width="100%" height="100%">
+                <use href="./assets/images/sprite.svg#play"></use>
+              </svg>
+            </button>
+            <picture>
+              <source
+                srcset="
+                  ./assets/images/about/opportunities-thumbnail-tablet.webp    1x,
+                  ./assets/images/about/opportunities-thumbnail-tablet@2x.webp 2x
+                "
+                media="(min-width: 768px)"
+                type="image/webp"
+              />
+
+              <source
+                srcset="
+                  ./assets/images/about/opportunities-thumbnail-tablet.png    1x,
+                  ./assets/images/about/opportunities-thumbnail-tablet@2x.png 2x
+                "
+                media="(min-width: 768px)"
+                type="image/png"
+              />
+              <source
+                srcset="
+                  ./assets/images/about/opportunities-thumbnail-mobile.webp 1x,
+                  ./assets/images/about/opportunities-thumbnail-tablet.webp 2x
+                "
+                media="(max-width: 767px)"
+                type="image/webp"
+              />
+              <source
+                srcset="
+                  ./assets/images/about/opportunities-thumbnail-mobile.png 1x,
+                  ./assets/images/about/opportunities-thumbnail-tablet.png 2x
+                "
+                media="(max-width: 767px)"
+                type="image/png"
+              />
+              <img
+                width="100%"
+                height="100%"
+                loading="lazy"
+                src="./assets/images/about/opportunities-thumbnail-mobile.png"
+                alt="{{thumbnailAlt}}"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="flex flex-col gap-y-4 md:flex-row md:flex-wrap md:gap-x-8 md:gap-y-10">
+      {% for award in section.awards %}
+      <li
+        class="award flex gap-3 border-b border-[#CDDCF8] pb-4 md:w-[calc((100%-2rem)/2)] md:gap-4 xl:w-[384px] xl:gap-6 xl:pb-6 xl:pl-4"
+      >
+        <picture class="flex items-center">
+          <source
+            srcset="{{award.image.normal.webp}} 1x, {{award.image.retina.webp}} 2x"
+            type="image/webp"
+          />
+          <source
+            srcset="{{award.image.normal.png}} 1x, {{award.image.retina.png}} 2x"
+            type="image/png"
+          />
+          <img
+            height="98px"
+            width="52px"
+            loading="lazy"
+            class="award-icon h-[98px]"
+            src="{{award.image.normal.png}}"
+            alt="{{award.awardAlt}}{{award.title}}"
+          />
+        </picture>
+        <div>
+          <h3 class="award-title mb-3 text-sm font-bold md:text-base xl:text-xl xl:leading-[30px]">
+            {{award.title}}
+          </h3>
+          <p class="award-description text-sm">{{award.description}}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
