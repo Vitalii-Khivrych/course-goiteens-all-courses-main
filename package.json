@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env PORT=3000 gulp start --development ",
-    "build": "gulp build --production",
+    "build": "gulp build --output public",
     "prettier": "prettier --write \".\"",
     "htmlhint": "npx htmlhint \"**/*.html\""
   },
